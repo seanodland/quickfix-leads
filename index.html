@@ -3,131 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickFix - Real Estate Repair Request</title>
+    <title>First Choice | Ready, Set, Close - Real Estate Repair Request</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🛠 QuickFix</h1>
-            <p class="subtitle">Real Estate Agent → Contractor</p>
-            <p class="promise">Get a callback in 2 hours or less</p>
+            <div class="logo-ring">
+                <div class="speed-bars top">
+                    <div class="bar bar-grey"></div>
+                    <div class="bar bar-cyan"></div>
+                    <div class="bar bar-navy"></div>
+                </div>
+                <div class="logo-text">
+                    <h1 class="brand-name">First Choice</h1>
+                    <p class="tagline-slogan">READY, SET, CLOSE</p>
+                    <p class="tagline-sub">YOUR HOME CLOSE REPAIR EXPERTS</p>
+                </div>
+                <div class="speed-bars bottom">
+                    <div class="bar bar-grey"></div>
+                    <div class="bar bar-cyan"></div>
+                    <div class="bar bar-navy"></div>
+                </div>
+            </div>
         </div>
+
+        <div class="divider"></div>
 
         <form id="repairForm" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="agentName">Your Name *</label>
-                <input type="text" id="agentName" name="agentName" required>
+                <label>Your Name <span class="req">*</span></label>
+                <input type="text" name="name" required placeholder="John Smith">
             </div>
 
             <div class="form-group">
-                <label for="agentPhone">Phone Number *</label>
-                <input type="tel" id="agentPhone" name="agentPhone" required placeholder="(555) 555-5555">
+                <label>Phone Number <span class="req">*</span></label>
+                <input type="tel" name="phone" required placeholder="(XXX) XXX-XXXX">
             </div>
 
             <div class="form-group">
-                <label for="agentEmail">Email Address *</label>
-                <input type="email" id="agentEmail" name="agentEmail" required>
+                <label>Email Address <span class="req">*</span></label>
+                <input type="email" name="email" required placeholder="you@domain.com">
             </div>
 
             <div class="form-group">
-                <label for="propertyAddress">Property Address *</label>
-                <input type="text" id="propertyAddress" name="propertyAddress" required placeholder="123 Main St, City, State 12345">
+                <label>Property Address <span class="req">*</span></label>
+                <input type="text" name="address" required placeholder="123 Main St, City, State">
             </div>
 
             <div class="form-group">
-                <label for="timeline">Timeline *</label>
-                <div class="radio-group">
-                    <label class="radio-option">
+                <label>Timeline <span class="req">*</span></label>
+                <div class="timeline-options">
+                    <label class="timeline-option priority-urgent">
                         <input type="radio" name="timeline" value="24h" required>
-                        <span class="radio-label">🚨 Within 24hrs</span>
+                        <span class="timeline-label">
+                            <strong class="urgency-urgent">🚨 CRITICAL — WITHIN 24 HOURS</strong>
+                            <span>Inspection deadline imminent</span>
+                        </span>
                     </label>
-                    <label class="radio-option">
+                    <label class="timeline-option priority-high">
                         <input type="radio" name="timeline" value="3d" required>
-                        <span class="radio-label">📅 Within 3 days</span>
+                        <span class="timeline-label">
+                            <strong class="urgency-high">📅 URGENT — WITHIN 3 DAYS</strong>
+                            <span>Pre-listing prep</span>
+                        </span>
                     </label>
-                    <label class="radio-option">
+                    <label class="timeline-option">
                         <input type="radio" name="timeline" value="1w" required>
-                        <span class="radio-label">📆 Within 1 week</span>
+                        <span class="timeline-label">
+                            <strong>📆 SOON — WITHIN 1 WEEK</strong>
+                            <span>Standard repair</span>
+                        </span>
                     </label>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="jobTypes">Job Types (Check all that apply) *</label>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="jobTypes" value="plumbing"> 🚿 Plumbing</label>
-                    <label><input type="checkbox" name="jobTypes" value="electrical"> ⚡ Electrical</label>
-                    <label><input type="checkbox" name="jobTypes" value="drywall"> 🧱 Drywall Repair</label>
-                    <label><input type="checkbox" name="jobTypes" value="paint"> 🖌 Paint/Touch-up</label>
-                    <label><input type="checkbox" name="jobTypes" value="flooring"> 🏠 Flooring</label>
-                    <label><input type="checkbox" name="jobTypes" value="hvac"> 🧊 HVAC</label>
-                    <label><input type="checkbox" name="jobTypes" value="roofing"> 🏢 Roofing</label>
-                    <label><input type="checkbox" name="jobTypes" value="other"> 📝 Other</label>
+                <label>What Needs to Be Fixed? <span class="req">*</span></label>
+                <div class="repair-grid">
+                    <label class="repair-option"><input type="checkbox" name="job" value="plumbing">🚿 Plumbing</label>
+                    <label class="repair-option"><input type="checkbox" name="job" value="electrical">⚡ Electrical</label>
+                    <label class="repair-option"><input type="checkbox" name="job" value="drywall">🔨 Drywall</label>
+                    <label class="repair-option"><input type="checkbox" name="job" value="paint">🎨 Paint</label>
+                    <label class="repair-option"><input type="checkbox" name="job" value="flooring">🏠 Flooring</label>
+                    <label class="repair-option"><input type="checkbox" name="job" value="hvac">❄ HVAC</label>
+                    <label class="repair-option"><input type="checkbox" name="job" value="roofing">🏢 Roofing</label>
+                    <label class="repair-option"><input type="checkbox" name="job" value="other">📋 Other</label>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="budget">Budget Range *</label>
-                <select id="budget" name="budget" required>
-                    <option value="">Select budget...</option>
-                    <option value="500-2K">\(500 - \)2,000</option>
-                    <option value="2K-5K">\(2,000 - \)5,000</option>
-                    <option value="5K+">\(5,000+</option>
-                    <option value="estimate">Need estimate</option>
+                <label>Budget <span class="req">*</span></label>
+                <select name="budget" required>
+                    <option value="" disabled selected>Select budget range...</option>
+                    <option value="500-2K">$500 – $2,000</option>
+                    <option value="2K-5K">$2,000 – $5,000</option>
+                    <option value="5K-10K">$5,000 – $10,000</option>
+                    <option value="10K+">$10,000+</option>
+                    <option value="need-estimate">Need estimate first</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="photos">Photos (Optional - 5 max)</label>
-                <div class="file-upload">
-                    <input type="file" id="photos" name="photos" accept="image/*" multiple>
-                    <div class="file-upload-text">📸 Tap to add photos</div>
+                <label>Upload Photos (optional, max 5)</label>
+                <div class="file-upload-area" onclick="document.getElementById('photos').click()">
+                    <input type="file" id="photos" name="photos" accept="image/*" multiple style="display:none">
+                    <div class="upload-content">
+                        <div class="upload-icon">📸</div>
+                        <p>Tap to upload photos</p>
+                        <p class="upload-hint">Show us what needs fixing</p>
+                    </div>
                 </div>
                 <div id="photoPreview" class="photo-preview"></div>
             </div>
 
             <div class="form-group">
-                <label for="description">Description of Needed Work *</label>
-                <textarea id="description" name="description" rows="4" required placeholder="Describe what needs to be fixed. Include any inspection report details, seller notes, or specific concerns..."></textarea>
+                <label>Describe the Work Needed <span class="req">*</span></label>
+                <textarea name="description" rows="4" required placeholder="Describe what needs repair. Include inspection report items, seller requests, or specific details..."></textarea>
             </div>
 
-            <div class="form-group">
-                <label class="checkbox-option">
-                    <input type="checkbox" id="textUpdates" name="textUpdates" checked>
-                    <span>Send me text updates 📱</span>
-                </label>
-                <label class="checkbox-option">
-                    <input type="checkbox" id="emailUpdates" name="emailUpdates" checked>
-                    <span>Send me email updates ✉️</span>
-                </label>
+            <div class="form-group contact-prefs">
+                <label><input type="checkbox" name="text_updates" checked> Send me text updates</label>
+                <label><input type="checkbox" name="email_updates" checked> Send me email updates</label>
             </div>
 
             <button type="submit" class="submit-btn">
-                <span class="btn-text">Get My Quote Now</span>
-                <span class="btn-sub">(Contractor will call within 2 hours)</span>
+                <span class="btn-primary">GET MY QUOTE NOW</span>
+                <span class="btn-subtext">A First Choice expert will call you within 2 hours</span>
             </button>
 
-            <div class="loading hidden" id="loading">
+            <div id="loading" class="hidden">
                 <div class="spinner"></div>
-                <p>Sending to contractor...</p>
+                <p>Sending your request to First Choice...</p>
             </div>
 
-            <div class="success hidden" id="success">
-                <h3>✅ Request Sent!</h3>
-                <p>Your contractor will call you within 2 hours at <span id="savedPhone"></span></p>
-                <p>You'll also receive an email confirmation at <span id="savedEmail"></span></p>
+            <div id="success" class="hidden">
+                <h3>✅ Request Submitted!</h3>
+                <p>A First Choice expert will call you within <strong>2 hours</strong>.</p>
+                <p>We'll also send a confirmation to your email.</p>
+                <p class="phone-number">Questions? Call us directly.</p>
             </div>
 
-            <div class="error hidden" id="error">
+            <div id="error" class="hidden">
                 <h3>❌ Something Went Wrong</h3>
-                <p>Please try again, or call us directly.</p>
+                <p>Please try again or call us directly.</p>
             </div>
         </form>
 
         <div class="footer">
-            <p>Powered by QuickFix • Real estate agent benefits available</p>
-            <p>Available 24/7 • Licensed & Insured Contractors</p>
+            <p><strong>First Choice — Ready, Set, Close</strong></p>
+            <p>Your Home Close Repair Experts</p>
+            <p class="footer-small">Licensed • Insured • 24/7 Emergency Service</p>
+            <p class="footer-credit">A Division of First Choice Home Repairs</p>
         </div>
     </div>
 
