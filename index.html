@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickFix - Real Estate Repair Request</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛠 QuickFix</h1>
+            <p class="subtitle">Real Estate Agent → Contractor</p>
+            <p class="promise">Get a callback in 2 hours or less</p>
+        </div>
+
+        <form id="repairForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="agentName">Your Name *</label>
+                <input type="text" id="agentName" name="agentName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="agentPhone">Phone Number *</label>
+                <input type="tel" id="agentPhone" name="agentPhone" required placeholder="(555) 555-5555">
+            </div>
+
+            <div class="form-group">
+                <label for="agentEmail">Email Address *</label>
+                <input type="email" id="agentEmail" name="agentEmail" required>
+            </div>
+
+            <div class="form-group">
+                <label for="propertyAddress">Property Address *</label>
+                <input type="text" id="propertyAddress" name="propertyAddress" required placeholder="123 Main St, City, State 12345">
+            </div>
+
+            <div class="form-group">
+                <label for="timeline">Timeline *</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="timeline" value="24h" required>
+                        <span class="radio-label">🚨 Within 24hrs</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="timeline" value="3d" required>
+                        <span class="radio-label">📅 Within 3 days</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="timeline" value="1w" required>
+                        <span class="radio-label">📆 Within 1 week</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="jobTypes">Job Types (Check all that apply) *</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="jobTypes" value="plumbing"> 🚿 Plumbing</label>
+                    <label><input type="checkbox" name="jobTypes" value="electrical"> ⚡ Electrical</label>
+                    <label><input type="checkbox" name="jobTypes" value="drywall"> 🧱 Drywall Repair</label>
+                    <label><input type="checkbox" name="jobTypes" value="paint"> 🖌 Paint/Touch-up</label>
+                    <label><input type="checkbox" name="jobTypes" value="flooring"> 🏠 Flooring</label>
+                    <label><input type="checkbox" name="jobTypes" value="hvac"> 🧊 HVAC</label>
+                    <label><input type="checkbox" name="jobTypes" value="roofing"> 🏢 Roofing</label>
+                    <label><input type="checkbox" name="jobTypes" value="other"> 📝 Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="budget">Budget Range *</label>
+                <select id="budget" name="budget" required>
+                    <option value="">Select budget...</option>
+                    <option value="500-2K">\(500 - \)2,000</option>
+                    <option value="2K-5K">\(2,000 - \)5,000</option>
+                    <option value="5K+">\(5,000+</option>
+                    <option value="estimate">Need estimate</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="photos">Photos (Optional - 5 max)</label>
+                <div class="file-upload">
+                    <input type="file" id="photos" name="photos" accept="image/*" multiple>
+                    <div class="file-upload-text">📸 Tap to add photos</div>
+                </div>
+                <div id="photoPreview" class="photo-preview"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description of Needed Work *</label>
+                <textarea id="description" name="description" rows="4" required placeholder="Describe what needs to be fixed. Include any inspection report details, seller notes, or specific concerns..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="checkbox-option">
+                    <input type="checkbox" id="textUpdates" name="textUpdates" checked>
+                    <span>Send me text updates 📱</span>
+                </label>
+                <label class="checkbox-option">
+                    <input type="checkbox" id="emailUpdates" name="emailUpdates" checked>
+                    <span>Send me email updates ✉️</span>
+                </label>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <span class="btn-text">Get My Quote Now</span>
+                <span class="btn-sub">(Contractor will call within 2 hours)</span>
+            </button>
+
+            <div class="loading hidden" id="loading">
+                <div class="spinner"></div>
+                <p>Sending to contractor...</p>
+            </div>
+
+            <div class="success hidden" id="success">
+                <h3>✅ Request Sent!</h3>
+                <p>Your contractor will call you within 2 hours at <span id="savedPhone"></span></p>
+                <p>You'll also receive an email confirmation at <span id="savedEmail"></span></p>
+            </div>
+
+            <div class="error hidden" id="error">
+                <h3>❌ Something Went Wrong</h3>
+                <p>Please try again, or call us directly.</p>
+            </div>
+        </form>
+
+        <div class="footer">
+            <p>Powered by QuickFix • Real estate agent benefits available</p>
+            <p>Available 24/7 • Licensed & Insured Contractors</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

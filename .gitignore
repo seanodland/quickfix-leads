@@ -1,0 +1,47 @@
+# --- QUICKFIX LEAD CAPTURE - GITIGNORE ---
+# Files ignored by Git (don't track/push)
+
+# --- System files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Editor files ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- OS files ---
+*.log
+*.tmp
+
+# --- Dependencies (if we add later) ---
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+env/
+
+# --- Environment / Secrets (NEVER commit these) ---
+.env
+.env.local
+.env.*.local
+secrets.json
+*.key
+*.pem
+
+# --- Build outputs (if we add build step later) ---
+dist/
+build/
+*.cache
+
+# --- Testing / Debug files ---
+test-uploads/
+debug.log
+coverage/
+
+# --- Keep these ---
+# We WANT to track all source files, images, QR codes
+# .gitignore only excludes UNWANTED files
